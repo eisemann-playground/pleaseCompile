@@ -6,7 +6,6 @@
 #include <QDir>
 #include <QDirIterator>
 
-
 DirectoryList::DirectoryList(const QString &pathToDirectory)
 {
     // only lists the current directory not recursive //
