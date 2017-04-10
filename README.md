@@ -12,9 +12,9 @@ In its current state it does not support any of the fancy features of other more
 ## Project structure
 All pleaseCompile projects need to stick to a special folder layout which is described below:
 
-root
+  root
 
--src
+    -src
 
 --app
    
