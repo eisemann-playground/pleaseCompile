@@ -16,21 +16,21 @@ root
 
 |-- src
 
-   |-- app
+....|-- app
    
-   |   |-- "your first executable"
+....|-- "your first executable"
    
-   |   |-- "your second executable"
+....|-- "your second executable"
    
-        -- ...
+.....-- ...
         
-   |-- lib
+....|-- lib
    
-       |-- "your first static library that gets linked into your executables"
+....|-- "your first static library that gets linked into your executables"
        
-       |-- "your second static library that gets linked into your executables"
+....|-- "your second static library that gets linked into your executables"
        
-        -- ...
+.....-- ...
 
 root is your project folder which needs to contain a src folder.
 
