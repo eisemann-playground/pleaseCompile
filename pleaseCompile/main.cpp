@@ -1,6 +1,7 @@
 #include <iostream>
 #include <QApplication>
 #include <QDir>
+#include <QString>
 
 #include "directorylist.h"
 
@@ -15,9 +16,11 @@ int main(int argc, char *argv[])
 
 
     // query all directories of the project //
-    DirectoryList d( QDir::currentPath() );
+    // /Users/martineisemann/sciebo/code/C++/pleaseCompile/test //
+    // QDir::currentPath() //
+    DirectoryList d( "/Users/martineisemann/sciebo/code/C++/pleaseCompile/test" );
 
-    std::cout << d;
+    std::cout << d;   
 
     return 0;
 }
