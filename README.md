@@ -13,14 +13,23 @@ In its current state it does not support any of the fancy features of other more
 All pleaseCompile projects need to stick to a special folder layout which is described below:
 
 root
+
 |-- src
+
    |-- app
+   
    |   |-- "your first executable"
+   
    |   |-- "your second executable"
+   
         -- ...
+        
    |-- lib
+   
        |-- "your first static library that gets linked into your executables"
+       
        |-- "your second static library that gets linked into your executables"
+       
         -- ...
 
 root is your project folder which needs to contain a src folder.
