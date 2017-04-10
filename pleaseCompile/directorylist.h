@@ -14,7 +14,7 @@ public:
     friend std::ostream& operator<< (std::ostream &out, const DirectoryList &d);
 
 private:
-    QString m_rootDir;
+    QString m_srcRootDir;
     std::vector<QString> m_libraryDirs;
     std::vector<QString> m_aplicationDirs;
 
