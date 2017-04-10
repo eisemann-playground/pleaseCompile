@@ -1,6 +1,7 @@
 #include "directorylist.h"
 
 #include <iostream>
+#include <string>
 
 #include <QDebug>
 #include <QDir>
@@ -37,7 +38,7 @@ void DirectoryList::queryAllDirectories(const QString& pathToDirectory){
 
 std::ostream& operator<< (std::ostream &out, const DirectoryList &d)
 {
-    out << "\nSource directory: " << d.m_srcRootDir.toStdString() << std::endl << std::endl;
+    out << "\nSource directory:\n" << d.m_srcRootDir.toStdString() << std::endl << std::endl;
 
     out << "Library directories:\n";
     for(auto it : d.m_libraryDirs){
@@ -48,8 +49,7 @@ std::ostream& operator<< (std::ostream &out, const DirectoryList &d)
     for(auto it : d.m_aplicationDirs){
         out << it.toStdString() << std::endl;
     }
-    out << std::endl;
-
+    out << std::endl;    
 
     return out;
 }

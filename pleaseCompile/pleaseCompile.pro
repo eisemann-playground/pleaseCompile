@@ -4,9 +4,12 @@ QT += widgets
 
 CONFIG += c++11
 
+
 TARGET = pleaseCompile
-CONFIG += console
+#CONFIG += console
 CONFIG -= app_bundle
+
+QMAKE_CXXFLAGS_WARN_ON += -Wall
 
 TEMPLATE = app
 
