@@ -14,23 +14,23 @@ All pleaseCompile projects need to stick to a special folder layout which is des
 
 1.root
 
-1.1.src
+-src
 
-1.1.1.app
+--app
    
-1.1.1.1."your first executable"
+---"your first executable"
    
-1.1.1.2."your second executable"
+---"your second executable"
    
-1.1.1.n.-- ...
+--- ...
         
-1.1.2.lib
+--lib
    
-1.1.2.1."your first static library that gets linked into your executables"
+---"your first static library that gets linked into your executables"
        
-1.1.2.2"your second static library that gets linked into your executables"
+---"your second static library that gets linked into your executables"
        
-1.1.2.n. ...
+--- ...
 
 root is your project folder which needs to contain a src folder.
 
