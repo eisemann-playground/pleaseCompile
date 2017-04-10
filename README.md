@@ -12,25 +12,25 @@ In its current state it does not support any of the fancy features of other more
 ## Project structure
 All pleaseCompile projects need to stick to a special folder layout which is described below:
 
-root
+1.root
 
-|-- src
+1.1.src
 
-....|-- app
+1.1.1.app
    
-....|-- "your first executable"
+1.1.1.1."your first executable"
    
-....|-- "your second executable"
+1.1.1.2."your second executable"
    
-.....-- ...
+1.1.1.n.-- ...
         
-....|-- lib
+1.1.2.lib
    
-....|-- "your first static library that gets linked into your executables"
+1.1.2.1."your first static library that gets linked into your executables"
        
-....|-- "your second static library that gets linked into your executables"
+1.1.2.2"your second static library that gets linked into your executables"
        
-.....-- ...
+1.1.2.n. ...
 
 root is your project folder which needs to contain a src folder.
 
