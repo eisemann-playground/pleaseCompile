@@ -53,6 +53,3 @@ To allow this simplistic usage some guidelines must be followed:
 
 Hope you enjoy using pleaseCompile!
 
-Here's a picture of me.
-![It's me](http://lwibs01.gm.fh-koeln.de/blogs/eisemann/files/2016/12/eisemannsmall_HalfHD-200x300.jpg)
-
