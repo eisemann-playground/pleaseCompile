@@ -9,6 +9,29 @@ PleaseCompile does a lot of things a good programmer wouldn't be proud of, like 
 Please note that pleaseCompile is by far no complete build system! 
 In its current state it does not support any of the fancy features of other more powerful build systems such as CMake, Meson, autotools, or others.
 
+## Installation
+You need to install Qt5 before installing pleaseCompile.
+Currently no installer for pleaseCompile is provided, so you need to download the source files and compile them calling
+
+    qmake pleaseCompile.pro
+
+Alternatively, you can open the .pro file in Qt Creator and compile it within your IDE.
+Copy the resulting executable into one of your folders specified in the environment variable $PATH so you can call it from a terminal.
+You also need [ninja](https://ninja-build.org/) on your PC.
+
+
+## Usage
+Simply go to your projects root directory and type 
+
+    pleaseCompile
+
+That's all. In the best case you don't need to specify any dependencies, include directories or link directories.
+PleaseCompile should create a build directory and place the executable in there.
+
+In some ambiguous cases pleaseCompile might ask you to specify which library or header you want to use. This usually happens if the header or library is neither part of the project nor in the standard folders.
+
+Make sure your project fulfills the restrictions and project folder structure.
+
 ## Project structure
 All pleaseCompile projects need to stick to a special folder layout which is described below:
 
@@ -25,24 +48,6 @@ All pleaseCompile projects need to stick to a special folder layout which is des
 
 root is your project folder which needs to contain a src folder.
 
-## Installation
-You need to install Qt5 before installing pleaseCompile.
-Currently no installer for pleaseCompile is provided, so you need to download the source files and compile them calling
-
-    qmake pleaseCompile.pro
-
-Copy the resulting executable into one of your folders specified in the environment variable $PATH so you can call it from a terminal.
-
-## Usage
-Simply go to your projects root directory and type 
-
-    pleaseCompile
-
-That's all. In the best case you don't need to specify any dependencies, include directories or link directories.
-PleaseCompile should create a build directory and place the executable in there.
-
-In some ambiguous cases pleaseCompile might ask you to specify which library or header you want to use. This usually happens if the header or library is neither part of the project nor in the standard folders.
-
 ## Restrictions
 To allow this simplistic usage some guidelines must be followed:
 - You have to stick to the project structure listed above
@@ -52,3 +57,21 @@ To allow this simplistic usage some guidelines must be followed:
 - There are probably a lot more, I will add them here as soon as I stumble across them.
 
 Hope you enjoy using pleaseCompile!
+
+Some code:
+```c++
+int main(){
+    for(int i=0;i<5;++i){
+        std::cout << "Please compile!" << std::endl;
+    }
+}
+```
+
+## Contributing
+The project is in a too early stage to contribute.
+
+## Credits
+Just me. ;)
+
+## License
+See the license file.
