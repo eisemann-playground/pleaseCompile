@@ -66,3 +66,12 @@ int main(){
     }
 }
 ```
+
+## Contributing
+The project is in a too early stage to contribute.
+
+## Credits
+Just me. ;)
+
+## License
+See the license file.
