@@ -54,10 +54,10 @@ To allow this simplistic usage some guidelines must be followed:
 Hope you enjoy using pleaseCompile!
 
 Some code:
-'''javascript
+```javascript
 function fancyAlert(arg) {
   if(arg) {
     $.facebox({div:'#foo'})
   }
 }
-'''
+```
