@@ -17,7 +17,7 @@ Currently no installer for pleaseCompile is provided, so you need to download th
 
 Alternatively, you can open the .pro file in Qt Creator and compile it within your IDE.
 Copy the resulting executable into one of your folders specified in the environment variable $PATH so you can call it from a terminal.
-You also need [ninja](ninja-build.org) on your PC.
+You also need [ninja](https://ninja-build.org/) on your PC.
 
 
 ## Usage
