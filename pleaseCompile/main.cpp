@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     }
 
     try{
-        std::cout << "pleaseCompile!\n";
+        std::cout << "Oh, please compile!\n";
 
         // query all directories of the project containing source code //
         DirectoryList d( argv[1] );
