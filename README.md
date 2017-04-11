@@ -54,10 +54,10 @@ To allow this simplistic usage some guidelines must be followed:
 Hope you enjoy using pleaseCompile!
 
 Some code:
-```javascript
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
+```c++
+int main(){
+    for(int i=0;i<5;++i){
+        std::cout << "Please compile!" << std::endl;
+    }
 }
 ```
