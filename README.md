@@ -50,3 +50,5 @@ To allow this simplistic usage some guidelines must be followed:
 - Avoid namespace clutter, no two files with the same name are allowed.
 - All libraries that get created are named after the folder their source code resides.
 - There are probably a lot more, I will add them here as soon as I stumble across them.
+
+Hope you enjoy using pleaseCompile!
