@@ -20,7 +20,9 @@ int main(int argc, char *argv[])
         std::exit(-1);
     }
 
-    try{        
+    try{
+        std::cout << "pleaseCompile!\n";
+
         // query all directories of the project containing source code //
         DirectoryList d( argv[1] );
 
