@@ -12,16 +12,16 @@ In its current state it does not support any of the fancy features of other more
 ## Project structure
 All pleaseCompile projects need to stick to a special folder layout which is described below:
 
-root
-|-- src
-   |-- app
-   |   |-- "your first executable"
-   |   |-- "your second executable"
-        -- ...
-   |-- lib
-       |-- "your first static library that gets linked into your executables"
-       |-- "your second static library that gets linked into your executables"
-        -- ...
+    root
+    -src
+    --app
+    ---"your first executable" 
+    ---"your second executable"
+    --- ...
+    --lib
+    ---"your first static library that gets linked into your executables"  
+    ---"your second static library that gets linked into your executables"
+    --- ...
 
 root is your project folder which needs to contain a src folder.
 
@@ -29,14 +29,14 @@ root is your project folder which needs to contain a src folder.
 You need to install Qt5 before installing pleaseCompile.
 Currently no installer for pleaseCompile is provided, so you need to download the source files and compile them calling
 
-qmake pleaseCompile.pro
+    qmake pleaseCompile.pro
 
 Copy the resulting executable into one of your folders specified in the environment variable $PATH so you can call it from a terminal.
 
 ## Usage
 Simply go to your projects root directory and type 
 
-pleaseCompile
+    pleaseCompile
 
 That's all. In the best case you don't need to specify any dependencies, include directories or link directories.
 PleaseCompile should create a build directory and place the executable in there.
