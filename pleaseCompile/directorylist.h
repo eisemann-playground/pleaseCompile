@@ -9,7 +9,12 @@
 class DirectoryList
 {
 public:
-    DirectoryList(const QString& pathToDirectory);
+    DirectoryList(const QString& pathToDirectory);  
+
+    // getter-functions //
+    QString srcRootDir() const;
+    const std::vector<QString>& libraryDirs() const;
+    const std::vector<QString>& aplicationDirs() const;
 
     friend std::ostream& operator<< (std::ostream &out, const DirectoryList &d);
 

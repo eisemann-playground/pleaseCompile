@@ -15,7 +15,8 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     directorylist.cpp \
-    filelist.cpp
+    filelist.cpp \
+    projectstructurecontroller.cpp
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -30,4 +31,5 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 HEADERS += \
     directorylist.h \
-    filelist.h
+    filelist.h \
+    projectstructurecontroller.h

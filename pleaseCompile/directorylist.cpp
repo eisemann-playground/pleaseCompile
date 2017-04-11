@@ -12,6 +12,22 @@ DirectoryList::DirectoryList(const QString &pathToDirectory)
     queryAllDirectories(pathToDirectory);
 }
 
+QString DirectoryList::srcRootDir() const
+{
+    return m_srcRootDir;
+}
+
+const std::vector<QString>& DirectoryList::libraryDirs() const
+{
+    return m_libraryDirs;
+}
+
+const std::vector<QString>& DirectoryList::aplicationDirs() const
+{
+    return m_aplicationDirs;
+}
+
+
 void DirectoryList::queryAllDirectories(const QString& pathToDirectory){
     QDirIterator it(pathToDirectory + "/src", QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks, QDirIterator::Subdirectories);
 
@@ -25,15 +41,17 @@ void DirectoryList::queryAllDirectories(const QString& pathToDirectory){
         QString substr {currentDir};
         substr.replace(m_srcRootDir + "/", "");
 
-        if(substr.startsWith("lib")){
+        if(substr == "app" || substr == "lib"){ continue; }
+        else if(substr.startsWith("lib")){
             m_libraryDirs.push_back(currentDir); }
         else if(substr.startsWith("app")){
             m_aplicationDirs.push_back(currentDir); }
         else{
-            std::cerr << "The project directory does not follow the pleaseCompile standards! Aborting compilation.";
-            std::exit(1);
+            QString errorMessage = "The project directory does not follow the pleaseCompile standards! Aborting compilation.\nPlease check: "
+                    + currentDir;
+            throw errorMessage;
         }
-    }
+    }        
 }
 
 std::ostream& operator<< (std::ostream &out, const DirectoryList &d)

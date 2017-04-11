@@ -7,6 +7,7 @@
 #include <QString>
 
 #include "directorylist.h"
+#include "projectstructurecontroller.h"
 
 /**
  * @brief main - Compiles the program. It is assumed that the program is called from the root node of the project
@@ -19,8 +20,12 @@ int main(int argc, char *argv[])
         std::exit(-1);
     }
 
-    try{
+    try{        
+        // query all directories of the project containing source code //
         DirectoryList d( argv[1] );
+
+        ProjectStructureController p( d );
+
         std::cout << d;
     }
     catch(const std::exception& e){
@@ -33,6 +38,10 @@ int main(int argc, char *argv[])
     }
     catch(const std::string message){
         std::cerr << message;
+        std::exit(-1);
+    }
+    catch(const QString message){
+        std::cerr << message.toStdString();
         std::exit(-1);
     }
     catch(...)
