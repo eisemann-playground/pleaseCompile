@@ -2,14 +2,19 @@
 
 #include <iostream>
 
-ProjectStructureController::ProjectStructureController(const DirectoryList& d )
-{    
-    std::cout << "Checking project folder structure.\n";
+/**
+ * @brief ProjectStructureController::ProjectStructureController
+ * @param
+ */
+ProjectStructureController::ProjectStructureController()
+{}
+
+void ProjectStructureController::controlProjectStructure(const DirectoryList& d){
     checkFolderTreeDepth( "/app/", d.aplicationDirs() );
     checkFolderTreeDepth( "/lib/", d.libraryDirs() );
 }
 
-void ProjectStructureController::checkFolderTreeDepth( const QString match, const std::vector<QString>& dirs ) const
+void ProjectStructureController::checkFolderTreeDepth( const QString match, const std::vector<QString>& dirs )
 {
     for(const QString& it : dirs){
         std::cout << it.toStdString() << std::endl;

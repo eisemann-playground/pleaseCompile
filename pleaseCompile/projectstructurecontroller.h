@@ -6,10 +6,11 @@
 class ProjectStructureController
 {
 public:
-    ProjectStructureController( const DirectoryList& d );
+    ProjectStructureController();
+    static void controlProjectStructure(const DirectoryList& d);
 
 private:
-    void checkFolderTreeDepth( const QString s, const std::vector<QString>& dirs ) const;
+    static void checkFolderTreeDepth( const QString s, const std::vector<QString>& dirs );
 };
 
 #endif // PROJECTSTRUCTURECONTROLLER_H
