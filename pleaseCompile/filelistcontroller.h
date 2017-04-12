@@ -17,11 +17,14 @@ public:
 
     QStringList getDuplicateFiles() const;
 
-    const std::vector<QString>& fileList();
+    const QStringList& fileList();
 
 private:
 
-    std::vector<QString> m_fileList;
+    /**
+     * @brief m_fileList - After calling queryFileList this variable contains all files of your project
+     */
+    QStringList m_fileList;
 };
 
 #endif // FILELIST_H

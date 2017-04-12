@@ -3,6 +3,7 @@
 #include <string>
 
 #include <QApplication>
+#include <QDebug>
 #include <QDir>
 #include <QString>
 
@@ -13,8 +14,10 @@
 void startCompilation(int argc, char *argv[]){
     std::cout << "Oh, please compile!\n";
 
+    const QString projectFolder( argv[1] );
+
     // query all directories of the project containing source code //
-    DirectoryList listOfDirectories( argv[1] );
+    DirectoryList listOfDirectories( projectFolder );
 
     // check if the project folders are correctly arranged and no file duplicates exits //
     std::cout << "Checking project folders and files.\n";
@@ -31,11 +34,7 @@ void startCompilation(int argc, char *argv[]){
             errorMessage += (it + "\n");
         }
         throw fileList.getDuplicateFiles();
-    }
-
-
-
-    std::cout << listOfDirectories;
+    }    
 }
 
 /**
@@ -51,6 +50,7 @@ int main(int argc, char *argv[])
 
     try{
         startCompilation(argc, argv);
+        std::cout << "Yay, compilation finished successfully!\n";
     }
     catch(const std::exception& e){
         std::cerr << "Standard exception: " << e.what();
