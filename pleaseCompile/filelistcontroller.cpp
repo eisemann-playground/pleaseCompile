@@ -2,6 +2,9 @@
 
 #include <QDebug>
 #include <QDirIterator>
+#include <QSet>
+
+#include <set>
 
 /**
  * @brief FileList::FileList - Empty constructor
@@ -19,30 +22,54 @@ FileListController::FileListController()
  */
 void FileListController::queryFileList( const DirectoryList& dirList )
 {
-    QDirIterator it(dirList.srcRootDir(), QDir::Files | QDir::NoDotAndDotDot | QDir::NoSymLinks, QDirIterator::Subdirectories);
-    //QDirIterator it(dirList.srcRootDir(), QDir::NoDotAndDotDot | QDir::NoSymLinks, QDirIterator::Subdirectories);
+    QDirIterator it(dirList.srcRootDir(), QDir::Files | QDir::NoDotAndDotDot | QDir::NoSymLinks, QDirIterator::Subdirectories);    
     while (it.hasNext()){
         m_fileList.push_back( it.next() );
     }
-
+/*
     for(auto& file : m_fileList){
         std::cout << file.toStdString() << std::endl;
     }
-    /*
-    for(auto & dir : dirList.aplicationDirs()){
-        queryFilesForCurrentFolder(dir);
+*/
+}
+
+void FileListController::collectDuplicateFileNames(QSet<QString>& duplicateFileNames) const
+{
+    QSet<QString> uniqueFileNames;
+
+    for(const QString& it : m_fileList){
+
+        const int lastIdxOfSlash = it.lastIndexOf( "/" ) + 1;
+        QString substr{it};
+        substr.remove(0, lastIdxOfSlash);
+
+        const int sizeBefore = uniqueFileNames.size();
+        uniqueFileNames.insert(substr);
+        const int sizeAfter = uniqueFileNames.size();
+        if(sizeBefore == sizeAfter){
+            duplicateFileNames.insert(substr);
+        }
     }
-    for(auto & dir : dirList.libraryDirs()){
-        queryFilesForCurrentFolder(dir);
+}
+
+void FileListController::collectPathsOfDuplicateFiles(const QSet<QString>& duplicateFileNames, QStringList& result) const
+{
+    for(const QString& it : m_fileList){
+        for(const QString& it2 : duplicateFileNames){
+            if(it.endsWith(it2)){
+                result.push_back(it);
+            }
+        }
     }
-    */
 }
 
 QStringList FileListController::getDuplicateFiles() const
 {
     QStringList result;
+    QSet<QString> duplicateFileNames;
 
-    // TODO
+    collectDuplicateFileNames(duplicateFileNames);
+    collectPathsOfDuplicateFiles(duplicateFileNames, result);
 
     return result;
 }

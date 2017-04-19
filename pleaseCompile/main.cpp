@@ -33,7 +33,7 @@ void startCompilation(int argc, char *argv[]){
         for(auto& it : duplicates){
             errorMessage += (it + "\n");
         }
-        throw fileList.getDuplicateFiles();
+        throw errorMessage;
     }    
 }
 
